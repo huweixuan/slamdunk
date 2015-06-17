@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SLAM DUNK!!!</title>
+  <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  <script src="src/shoot.js"></script>
+  <style>
+    .basketball{background: url(basketball.png) no-repeat;width: 122px;height:122px;}
+    .sakuragi{background: url(sakuragi.png) no-repeat;position: absolute;top: 200px;left: 800px;width: 277px;height: 377px;}
+  </style>
+</head>
+<body>
+  <div class="sakuragi"></div>
+  <script>
+    $('.sakuragi').on('click', function() {
+      $('<div class="basketball"></div>').shoot({
+        start: {top: 200, left: 800},
+        end: {top: 100, left: 0},
+        onEnd: function() {
+          this.destroy();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
